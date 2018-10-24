@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "nodemon PORT=8080 ./bin/www",
-    "webpack": "./node_modules/.bin/webpack --config=src/webpack.config.js"
+    "webpack": "./node_modules/.bin/webpack --config=src/webpack.config.js",
+    "watch":"onchange 'src/**/*.js' 'src/**/*.less' -- npm run webpack"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
@@ -15,6 +16,7 @@
     "morgan": "~1.9.0"
   },
   "devDependencies": {
+    "onchange": "^5.0.2",
     "webpack": "^4.22.0",
     "webpack-cli": "^3.1.2"
   }
