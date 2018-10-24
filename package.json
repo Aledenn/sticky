@@ -5,7 +5,7 @@
   "scripts": {
     "start": "PORT=8080 nodemon ./bin/www",
     "webpack": "./node_modules/.bin/webpack --config=src/webpack.config.js",
-    "watch":"onchange 'src/**/*.js' 'src/**/*.less' -- npm run webpack"
+    "watch": "onchange 'src/**/*.js' 'src/**/*.less' -- npm run webpack"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
@@ -16,7 +16,11 @@
     "morgan": "~1.9.0"
   },
   "devDependencies": {
+    "css-loader": "^1.0.0",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
     "onchange": "^5.0.2",
+    "style-loader": "^0.23.1",
     "webpack": "^4.22.0",
     "webpack-cli": "^3.1.2"
   }
