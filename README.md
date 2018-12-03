@@ -34,3 +34,13 @@ Express + ejs + webpack
 ```
 函数
 嵌套
+
+#### 后台设计
+加个api代表ajax请求
+1. 获取所有note: GET /api/notes  req:成功：{status:0,data:[{},{}]} 失败:{status:1,errorMsg:"失败的原因"}
+2. 创建一个note: POST /api/note/create  {note:'hello word'}
+3. 修改一个note: POST /api/note/edit {note:'new note',id:100}
+4. 删除 POST /api/note/delete {id:100}
+
+crud --增删改查
+restful

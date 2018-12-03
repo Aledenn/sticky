@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start:port": "set PORT=port &&nodemon ./bin/www",
+    "start": "PORT=9000 nodemon ./bin/www",
+    "startw":"set PORT=9000 && nodemon ./bin/www",
     "webpack": "./node_modules/.bin/webpack --config=src/webpack.config.js",
     "watch": "onchange 'src/**/*.js' 'src/**/*.less' -- npm run webpack"
   },
