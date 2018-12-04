@@ -72,7 +72,7 @@ app.use(express.urlencoded({ extended: false }));
 ```
 猜测可能集成了body-Parser,看API文档
 
-#### 调试node程序
+#### 调试node程序 --- win安装失败
 node-inspector
 ```
 npm install -g node-inspector
@@ -80,4 +80,28 @@ npm install -g node-inspector
 使用
 ```
 node --debug
+```
+
+#### sequelize
+安装
+```
+npm install --save sequelize
+```
+创建连接
+```
+const Sequelize = require('sequelize');
+const sequelize = new Sequelize(undefined, undefined, undefined, {
+  host: 'localhost',
+  dialect: 'sqlite',  //这里使用sql
+
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000
+  },
+
+  // 仅限 SQLite
+  storage: '../database/database.sqlite'
+});
 ```

@@ -32,4 +32,4 @@ function Toast(msg,time){
 
 window.Toast= Toast
 
-module.exports.Toast = Toas5t;
+module.exports.Toast = Toast;
