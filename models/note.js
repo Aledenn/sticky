@@ -1,3 +1,4 @@
+const path = require('path')
 const Sequelize = require('sequelize');
 // sqlite不需要用户名密码等
 const sequelize = new Sequelize(undefined, undefined, undefined, {
@@ -12,7 +13,7 @@ const sequelize = new Sequelize(undefined, undefined, undefined, {
   },
 
   // 仅限 SQLite
-  storage: '../database/database.sqlite'
+  storage: path.join(__dirname,'../database/database.sqlite')
 });
 
 // sequelize
@@ -31,6 +32,7 @@ var Note = sequelize.define('note',{
   }
 })
 
+Note.sync()
 // force: true 如果表已经存在，将会丢弃表
 // Note.sync().then(() => {
 //   // 表已创建
@@ -44,8 +46,10 @@ var Note = sequelize.define('note',{
 // });
 
 
-Note.findAll({raw:true,attributes: ['text', 'id'],where:{id:2}}).then(
-  (note) => {
-    console.log(note);
-  }
-)
+// Note.findAll= Note.findAll({raw:true,attributes: ['text', 'id'],where:{id:2}}).then(
+//   (note) => {
+//     console.log(note);
+//   }
+// )
+
+module.exports.Note = Note
