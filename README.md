@@ -43,4 +43,41 @@ Express + ejs + webpack
 4. 删除 POST /api/note/delete {id:100}
 
 crud --增删改查
-restful
+restful风格
+1. http://127.0.0.1/user/1 GET  根据用户id查询用户数据
+2. http://127.0.0.1/user  POST 新增用户
+3. http://127.0.0.1/user  PUT 修改用户信息
+4. http://127.0.0.1/user  DELETE 删除用户信息
+
+#### body-parser
+nodejs默认没有body，载入body-parser 中间件
+```
+npm install body-parser --save
+```
+使用：
+```
+var bodyParser = require('body-parser')
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
+```
+但是貌似没有也可以
+使用：
+```
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+```
+猜测可能集成了body-Parser,看API文档
+
+#### 调试node程序
+node-inspector
+```
+npm install -g node-inspector
+```
+使用
+```
+node --debug
+```
