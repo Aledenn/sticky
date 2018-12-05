@@ -71,7 +71,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 ```
 猜测可能集成了body-Parser,看API文档
-
+果不其然:
+If you are using Express >= 4.16.0, body parser has been re-added under the methods express.json() and express.urlencoded().
 #### 调试node程序 --- win安装失败
 node-inspector
 ```

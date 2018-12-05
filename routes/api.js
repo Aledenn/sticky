@@ -27,8 +27,6 @@ router.post('/notes/add',function(req,res,next){
   })
 })
 router.post('/notes/edit',function(req,res,next){
-  // console.log(req);
-  // console.log(req.body.note);
   Note.update({text:req.body.note},{where:{id:req.body.id}}).then(() => {
     res.send({status:0})
   }).catch((err) => {
