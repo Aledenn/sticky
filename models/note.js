@@ -28,11 +28,16 @@ const sequelize = new Sequelize(undefined, undefined, undefined, {
 // 定义表
 var Note = sequelize.define('note',{
   text:{
-    type:Sequelize.STRING
+    type:Sequelize.STRING,
+  },
+  uid:{
+    type:Sequelize.STRING,
   }
 })
 
-Note.sync()
+// Note.drop()
+
+Note.sync(true)
 // force: true 如果表已经存在，将会丢弃表
 // Note.sync().then(() => {
 //   // 表已创建
