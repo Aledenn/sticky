@@ -37,7 +37,11 @@ var Note = sequelize.define('note',{
 
 // Note.drop()
 
-Note.sync(true)
+Note.sync({force:true}).then(
+  () => {
+    console.log('啊啊啊')
+  }
+)
 // force: true 如果表已经存在，将会丢弃表
 // Note.sync().then(() => {
 //   // 表已创建
